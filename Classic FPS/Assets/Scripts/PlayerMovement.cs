@@ -50,8 +50,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        verticalVelocity += Physics.gravity.y * Time.deltaTime;
-
 
         if (Input.GetButton("Jump") && cc.isGrounded)
         {
