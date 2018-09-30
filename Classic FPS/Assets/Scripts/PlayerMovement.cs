@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     float verticalRotation = 0;
     CharacterController cc;
-    private object velocity;
 
     void Awake()
     {
@@ -50,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        verticalVelocity += Physics.gravity.y * Time.deltaTime;
+
 
         if (Input.GetButton("Jump") && cc.isGrounded)
         {
@@ -60,6 +61,4 @@ public class PlayerMovement : MonoBehaviour
 
         cc.Move(transform.rotation * playerMovement * Time.deltaTime);
     }
-
-   
 }
