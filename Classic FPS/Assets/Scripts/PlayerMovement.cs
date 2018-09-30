@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public float playerRunningSpeed = 15f;
     public float jumpStrength = 20f;
     public float verticalRotationLimit = 80f;
-    public float gravity = 14.0f;
 
     float forwardMovement;
     float sidewaysMovement;
@@ -19,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     float verticalRotation = 0;
     CharacterController cc;
+    private object velocity;
 
     void Awake()
     {
@@ -42,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         {
             forwardMovement = Input.GetAxis("Vertical") * playerWalkingSpeed;
             sidewaysMovement = Input.GetAxis("Horizontal") * playerWalkingSpeed;
+
+            velocity.y += -.01;
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
