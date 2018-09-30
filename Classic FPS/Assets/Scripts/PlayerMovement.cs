@@ -43,8 +43,6 @@ public class PlayerMovement : MonoBehaviour
             forwardMovement = Input.GetAxis("Vertical") * playerWalkingSpeed;
             sidewaysMovement = Input.GetAxis("Horizontal") * playerWalkingSpeed;
 
-            velocity.y += -.01;
-
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 forwardMovement = Input.GetAxis("Vertical") * playerRunningSpeed;
